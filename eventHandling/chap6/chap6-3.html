@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>6-3. DIV 를 사용한 구역나누기 </title>
+
+<link rel="stylesheet" type="text/css" href="/JqueryStudy/eventHandling/css/divtest.css"  />
+
+<script type="text/javascript" src="/JqueryStudy/js/jquery-2.0.0.js"></script>
+
+<script type="text/javascript">
+	
+	$(document).ready(function(){ 
+		
+	//	var text = func_test();
+	//	console.log(text);
+	//  $("#container").html(text); 
+	
+	    $(".tdImg img").css('opacity', 0.2); 
+	    $(".tdImg2 img").css('opacity', 0.2); 
+	
+		$(".tdMenu").hover(function(){
+			                var $target = $(event.target);
+			                if($target.is(".tdMenu1")) {
+			                	$(this).addClass("tdFont");
+			                	$(".tdImg1 img").css('opacity', 1.0); 
+			                	
+			                	$(".tdImg-2-1").html(setImg("kimthLarge.jpg")); // 숙제
+			                	$(".tdImg-2-1 img").css('opacity', 1.0); // 숙제
+			                	$(".tdImg-2-2 img").css('opacity', 0.2); // 숙제
+			                	$(".tdImg-2-3 img").css('opacity', 0.2); // 숙제
+			                }
+			                else if($target.is(".tdMenu2")) {
+			                	$(this).addClass("tdFont");
+			                	$(".tdImg2 img").css('opacity', 1.0); 
+			                	
+			                	$(".tdImg-2-2").html(setImg("iyouLarge.jpg")); // 숙제
+			                	$(".tdImg-2-1 img").css('opacity', 0.2); // 숙제
+			                	$(".tdImg-2-2 img").css('opacity', 1.0); // 숙제
+			                	$(".tdImg-2-3 img").css('opacity', 0.2); // 숙제
+			                }
+			                else if($target.is(".tdMenu3")) {
+			                	$(this).addClass("tdFont");
+			                	$(".tdImg3 img").css('opacity', 1.0); 
+			                	
+			                	$(".tdImg-2-3").html(setImg("parkbyLarge.jpg")); // 숙제
+			                	$(".tdImg-2-1 img").css('opacity', 0.2); // 숙제
+			                	$(".tdImg-2-2 img").css('opacity', 0.2); // 숙제
+			                	$(".tdImg-2-3 img").css('opacity', 1.0); // 숙제
+			                }
+							
+			                var html = $("#tblContent").html();
+							console.log(html);
+			                
+		                  }
+		                 , function(){
+		                	$(this).removeClass("tdFont");
+		                	
+		                	$(".tdImg-2-1").html(setImg("kimth.jpg"));  // 숙제
+		                	$(".tdImg-2-2").html(setImg("iyou.jpg"));   // 숙제
+		                	$(".tdImg-2-3").html(setImg("parkby.jpg")); // 숙제
+		                	$(".tdImg img").css('opacity', 0.2);
+		                 });
+	
+		
+		$(".tdImg").click(function() {
+			var $target = $(event.target);
+			
+			if($target.is(".tdImg1 img")) {
+				$(".tdImg1").html(setImg("kimthLarge.jpg"));
+				
+				$(".tdImg2").html(setImg("iyou.jpg"));
+				$(".tdImg2 img").css('opacity',0.2);
+				
+				$(".tdImg3").html(setImg("parkby.jpg"));
+				$(".tdImg3 img").css('opacity',0.2);
+				
+			//	var html = $("#tblContent").html();
+			//	console.log(html);
+			}
+			else if($target.is(".tdImg2 img")){
+				$(".tdImg2").html(setImg("iyouLarge.jpg"));
+				
+				$(".tdImg1").html(setImg("kimth.jpg"));
+				$(".tdImg1 img").css('opacity',0.2);
+				
+				$(".tdImg3").html(setImg("parkby.jpg"));
+				$(".tdImg3 img").css('opacity',0.2);
+				
+			//	var html = $("#tblContent").html();
+			//	console.log(html);
+			}
+			else if($target.is(".tdImg3 img")){
+				$(".tdImg3").html(setImg("parkbyLarge.jpg"));
+				
+				$(".tdImg1").html(setImg("kimth.jpg"));
+				$(".tdImg1 img").css('opacity',0.2);
+				
+				$(".tdImg2").html(setImg("iyou.jpg"));
+				$(".tdImg2 img").css('opacity',0.2);
+				
+			//	var html = $("#tblContent").html();
+			//	console.log(html);
+			}
+			
+		});
+		
+	});// end of $(document).ready();-----------------
+	
+	function func_test() {
+		var result = "";
+		
+		for(var i=0; i<1000; i++) {
+		    result += (i+1)+". 안녕하세요?<br/>";		
+		}// end of for--------------
+		
+		return result;
+	}
+	
+	
+	function setImg(imgfile) {
+		var result = "<img src='images/"+imgfile+"' />";
+		return result;
+	}
+	
+	
+</script>	
+
+</head>
+<body>
+	<div id="container">
+		<div id="header">
+			<table id="tblMenu">
+				<tr>
+					<td class="tdMenu tdMenu1">김태희</td>
+					<td class="tdMenu tdMenu2">아이유</td>
+					<td class="tdMenu tdMenu3">박보영</td>
+				</tr>
+			</table>
+		</div> 
+		
+		<div id="content">
+			<table id="tblContent">
+				<tr>
+					<td class="tdImg tdImg1"><img src="images/kimth.jpg" alt="김태희"/></td>
+					<td class="tdImg tdImg2"><img src="images/iyou.jpg" alt="아이유"/></td>
+					<td class="tdImg tdImg3"><img src="images/parkby.jpg" alt="박보영"/></td>
+				</tr>
+			</table>
+			
+			<table id="tblContent2">
+				<tr>
+					<td class="tdImg-2 tdImg-2-1"><img src="images/kimth.jpg" alt="김태희"/></td>
+					<td class="tdImg-2 tdImg-2-2"><img src="images/iyou.jpg" alt="아이유"/></td>
+					<td class="tdImg-2 tdImg-2-3"><img src="images/parkby.jpg" alt="박보영"/></td>
+				</tr>
+			</table>
+		</div>
+		
+		<div id="sideInfo">
+		
+		</div>
+		
+		<div id="footer">
+		
+		</div>
+	</div>
+</body>
+</html>
+
+
+
