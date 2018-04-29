@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이벤트처리로 텍스트추가[prepend(), append() 메소드]
+          또는 텍스트제거[detach(), empty(), remove() 메소드] 하기</title>
+<!-- 웹페이지에 '추가' 와 '제거' 라는 텍스트를 가진 버튼이 있는데,
+     '추가' 버튼을 누르면 특정 텍스트가 웹페이지에 추가되고,
+     '제거' 버튼을 누르면 추가된 텍스트를 웹페이지에서 제거하고 싶다.  -->
+
+<link rel="stylesheet" type="text/css" href="/JqueryStudy/eventHandling/css/chap8.css"/>
+
+<script type="text/javascript" src="/JqueryStudy/js/jquery-2.0.0.js"></script>
+
+<script type="text/javascript">
+
+	$(document).ready(function() {
+		
+		$(".btn1").click(function() {
+			$(".div1").prepend("<p>동해물과 백두산이 마르고 닳도록 하느님이 보우하사 <span style=\"color: blue; font-weight: bold;\">우리나라</span> 만세<br/>무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세</p>"); 
+			
+			$(".div1").append("<p>동해물과 백두산이 마르고 닳도록 하느님이 보우하사 <span style=\"color: red; font-weight: bold;\">우리나라</span> 만세<br/>무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세</p>");
+			
+            $(".div2").prepend("<p>남산위에 저소나무 철갑을 두른듯 바람서리 불변함은 우리기상일세 <span style=\"color: blue; font-weight: bold;\">우리나라</span> 만세<br/>무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세</p>"); 
+			
+			$(".div2").append("<p>남산위에 저소나무 철갑을 두른듯 바람서리 불변함은 우리기상일세 <span style=\"color: red; font-weight: bold;\">우리나라</span> 만세<br/>무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세</p>");
+		});
+		/*
+		    태그의 내용을 더 추가할때는 
+		  prepend() 메소드  ==> [<div></div> 사이의 맨 앞에 추가 ] , 
+		  append() 메소드  ==> [<div></div> 사이의 맨 뒤에 추가 ] 
+		*/
+				
+		$(".btn2").click(function() {
+			$(".div1").empty();
+			/*
+			   선택자 $(".div1")의 하위요소(자식요소)를 제거한다.
+			   즉, $(".div1").prepend("<p>동해물과 백두산이 마르고 닳도록 하느님이 보우하사 <span style=\"color: blue; font-weight: bold;\">우리나라</span> 만세<br/>무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세</p>"); 
+			     <span style="color:blue; font-weight: bold;">애국가 1절</span>
+			     $(".div1").append("<p>동해물과 백두산이 마르고 닳도록 하느님이 보우하사 <span style=\"color: red; font-weight: bold;\">우리나라</span> 만세<br/>무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세</p>");
+			   부분을 제거하겠다는 말이다.
+			*/
+			
+			$(".div2").empty();
+		});
+		
+		  
+		$(".btn3").click(function() {
+			$(".div1").remove();
+			/*
+			   선택자 $(".div1") 의 자기자신 및 하위요소(자식요소)를 제거한다.
+			   즉, <div class="content div1">
+				      <span style="color:blue; font-weight: bold;">애국가 1절</span>
+				 </div> 부분을 제거하겠다는 말이다.  
+			*/
+			
+			$(".div2").remove();
+		});
+	});     
+</script>
+	
+</head>
+<body>
+	<div id="container">
+		<div id="menu">
+			<table id="tblMenu">
+				<tr>
+					<td><span class="buttons btn1">추 가</span></td>
+					<td><span class="buttons btn2">empty</span></td>
+					<td><span class="buttons btn3">remove</span></td>
+				</tr>
+			</table>
+		</div>
+		
+		<div class="content div1">
+			<span style="color:blue; font-weight: bold;">애국가 1절</span>
+		</div>
+		
+		<div class="content div2">
+		    <span style="color: red; font-weight: bold;" >애국가 2절</span>
+		</div>
+		
+	</div>
+</body>
+</html>
+
+
+
