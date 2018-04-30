@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>display 를  li 에 적용하여 세로 메뉴를 만들어본다.</title>
+
+<style type="text/css">
+   ul { list-style-type: none; /* 리스트의 디스크 아이콘 제거 */
+      }	
+
+   ul li a {text-decoration: none;
+            color : white;
+            background-color: blue;
+            display: block;
+            /* a태그는 display가 inline 이므로 width와 height를 부여할 수 없다.
+               width와 height 를 부여하려면  display를 block 으로 변경해야 한다.
+                           그런데 display를 block 으로 변경하면 앞.뒤로 줄바꿈이 발생하므로
+               display: block; 으로 준다. */
+            width: 130px;
+            height: 30px;
+            font-size: 14pt;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            padding-left: 10px;
+            padding-right: 10px;
+            margin-bottom: 20px;
+            }
+      
+   ul li a:hover { color: red;
+                   background-color: cyan;
+           }
+           
+   #container { border: 0px solid red;
+                width: 80%;
+                margin: 0 auto;
+                min-height: 700px; 
+                margin-top: 40px;
+   }
+   
+   #left { border: 0px solid blue;
+           float: left;
+           width: 20%;
+           min-height: 700px; 
+           background-color: #e6e6e6;
+   }
+   
+   #right { border: 0px solid blue;
+            float: left;
+            width: 80%;
+            min-height: 700px; 
+            background-color: #999999;
+   }
+   
+   #menu { position: absolute;
+           top: 80px;
+           left: 200px;
+           text-align: center;
+   }
+     
+   #content { position: absolute;
+              top: 60px;
+              left: 520px;
+   }           
+         
+</style>
+
+</head>
+<body>
+    <div id="container">
+      <div id="left">
+	    <div id="menu">
+			<ul>
+				<li><a href="#">영화</a></li>
+				<li><a href="#">예매</a></li>
+				<li><a href="#">극장</a></li>
+				<li><a href="#">이벤터&amp;컬처</a></li>	
+			</ul>
+		</div>
+	  </div>
+	
+	  <div id="right">
+		<div id="content">
+			여기는 내용물이 들어오는 곳입니다.
+		</div>
+	  </div>
+	
+	</div>
+</body>
+</html>

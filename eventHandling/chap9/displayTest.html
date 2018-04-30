@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSS의 display에 대해서 알아본다.</title>
+
+<style type="text/css">
+
+   div{margin: 2%;}
+   
+   .myweb {display: block;}	
+   .myli {display: inline;} 
+     
+   .beverage {display: inline-block;}     
+   
+</style>
+
+</head>
+<body>
+	<div>
+		<a href="http://www.naver.com">네이버</a>
+		<a href="http://www.daum.net">다음</a>
+		<a href="http://www.nate.com">네이트</a>
+	</div>
+
+    <div>
+		<a class="myweb" href="http://www.kbs.co.kr">KBS</a>
+		<a class="myweb" href="http://www.imbc.com">MBC</a>
+		<a class="myweb" href="http://www.sbs.co.kr">SBS</a>
+	</div>
+	
+	<div>
+		<ul>
+			<li>짜장면</li>
+			<li>짬뽕</li>
+			<li>탕수육</li>
+		</ul>
+		<p>
+		<ol>
+			<li>짜장면</li>
+			<li>짬뽕</li>
+			<li>탕수육</li>
+		</ol>
+	</div>
+	
+	<div>
+		<ul style="list-style-type: square;"> <!-- disc; circle; square; -->
+			<li>라면</li>
+			<li>떡볶이</li>
+			<li>김밥</li>
+		</ul>
+		<p>
+		<ol style="list-style-type:decimal;"> 
+			<li>라면</li>
+			<li>떡볶이</li>
+			<li>김밥</li>
+		</ol>
+		<p>
+		<ol style="list-style-type:decimal-leading-zero;"> 
+			<li>라면</li>
+			<li>떡볶이</li>
+			<li>김밥</li>
+		</ol>
+		<p>
+		<ol style="list-style-type: upper-roman;">
+			<li>라면</li>
+			<li>떡볶이</li>
+			<li>김밥</li>
+		</ol>
+		<p>
+		<ol style="list-style-type: upper-alpha;">
+			<li>라면</li>
+			<li>떡볶이</li>
+			<li>김밥</li>
+		</ol>
+	</div>
+	
+	<div>
+		<ul style="list-style-type: none;"> 
+			<li class="myli">라면</li>
+			<li class="myli">떡볶이</li>
+			<li class="myli">김밥</li>
+		</ul>
+	</div>
+	
+	<div>	
+		<ul style="list-style-type: none;">
+			<li class="beverage">
+			   <ol>
+			   	  <li>콜라</li>
+			   	  <li>사이다</li>
+			   	  <li>환타</li>
+			   </ol>
+			</li>
+			<li class="beverage">
+				<ol>
+			   	  <li>사과쥬스</li>
+			   	  <li>딸기쥬스</li>
+			   	  <li>레몬쥬스</li>
+			    </ol>
+			</li>
+			<li class="beverage">
+				<ol>
+			   	  <li>포카리스웨트</li>
+			   	  <li>7세븐업</li>
+			   	  <li>파워에이드</li>
+			    </ol>
+			</li>
+		</ul>
+	</div>
+	
+</body>
+</html>
