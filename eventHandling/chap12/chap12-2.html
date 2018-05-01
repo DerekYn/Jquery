@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>12.2 이미지 스크롤하기 [ animate(), fadeTo() ]</title>
+<!-- 이미지를 클릭하면 왼쪽에서 오른쪽으로 스크롤되게 하고 싶다.
+         이미지를 fadeTo() 메소드를 사용하여 이미지를 희미하게 한후에 
+         특정 함수를 실행하고 싶다. -->
+
+<style type="text/css">
+
+   img {position : relative;}
+
+</style>
+
+<script src="/JqueryStudy/js/jquery-2.0.0.js"></script>
+
+<script type="text/javascript">
+
+	$(document).ready(function() { 
+		
+		$("img").click(function() {
+			$(this).animate({left:600, top:500}, 'slow').fadeTo(1000, 0.1, myTest);         
+			/*
+			  선택자인 이미지를 position(absolute, relative)에 따라
+			  왼쪽에서 부터 600px, 위에서 부터 500px 떨어진 위치로
+			  600 밀리초 동안 옮긴다. 
+			
+			  선택자.fadeTo(1000, 0.1, myTest());
+			 ==> 선택자의 엘리먼트의 투명도를 조정해주는 메소드이다.
+			     - 1000 밀리초(== 1초)
+			     - 0.1 opacity(투명도)  0.0(투명) ~ 1.0(불투명,원래색깔)
+			     - myTest() 은 callback 함수라고 부른다.
+			*/
+			/* 
+			   'slow' == 600밀리초 
+			   'normal'== 400밀리초 
+			   'fast'== 200밀리초
+			*/
+		});
+		
+	});
+	
+	function myTest() {
+		alert("이미지 투명도가 0.1 이 되어진 다음에 실행하는 함수");
+	}
+	
+
+</script>
+
+</head>
+<body>
+	<img src="images/fish.jpg" />
+</body>
+</html>
+
+
+
