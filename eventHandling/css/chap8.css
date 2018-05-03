@@ -1,0 +1,35 @@
+@charset "UTF-8";
+
+#container {border: 0px solid red;
+	        width: 90%;
+	        min-height: 600px;
+	        margin: 0 auto;
+            }
+            
+#menu {border: 0px solid blue;
+	   width: 90%;
+	   height: 150px;
+	   margin: 2% auto;
+}  
+
+#tblMenu { border: 0px solid green;
+	       width: 80%;
+	       margin: 3% auto;
+	       text-align: center;}
+
+#tblMenu td {border: 0px solid orange;
+	         height: 60px;
+			 font-size: 20pt;
+			 font-weight: bold;}
+
+.buttons { padding: 1% 3%;
+	       border: 0px solid red;
+	       background-color: black;
+           color: white;
+          }
+			 
+.btn1 { padding: 1% 7%; }
+
+
+
+          
